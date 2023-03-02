@@ -54,6 +54,19 @@ class DYTokenizer:
                     self.token_idx[content[0]] = idx
                     self.idx_token[idx] = content[0]
             print(f"Vocab size : {len(self.token_idx)}")
+            
+    # def token2idx(self, batch_sample, max_len=300):
+    #     """
+    #     Transfer text to idx sequence.
+    #     paremeter:
+    #         -content: list[list], include 'batch_size' setences 
+    #     """
+    #     max_len = min()
+    def token2idx(self, token):
+        return self.token_idx[token]
+    
+    def idx2token(self, idx):
+        return self.idx_token[idx]
     
     def __repr__(self):
         return (f"{self.__class__.__name__}(name_or_path={self.vocab_file}, vocab_size={self.vocab_size}, max_len={self.max_len})")
